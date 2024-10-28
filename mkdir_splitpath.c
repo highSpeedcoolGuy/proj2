@@ -3,9 +3,6 @@
 #include <string.h>
 #include "types.h"
 
-"HelloASddasdasdkjabsdjhasijdhauiosdhaiuhsdiuahsdiuasu"
-
-
 extern struct NODE* root;
 extern struct NODE* cwd;
 
@@ -19,7 +16,6 @@ struct NODE* findChild(struct NODE* parent, const char* name) {
         child = child->siblingPtr;
     }
     return NULL;
-    
 }
 
 // splitPath function to split path into dirName and baseName
@@ -100,7 +96,9 @@ void mkdir(char pathName[]) {
     }
 
     // Initialize the new directory node fields
-    newNode->name = strdup(baseName);       // Copy baseName as the directory name
+    // Initialize the new directory node fields
+    strncpy(newNode->name, baseName, sizeof(newNode->name) - 1);
+    newNode->name[sizeof(newNode->name) - 1] = '\0';  // Ensure null-termination
     newNode->fileType = 'D';                // Set fileType as directory
     newNode->parentPtr = parentDir;         // Set parent pointer
     newNode->childPtr = NULL;               // No children initially
