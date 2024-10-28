@@ -3,6 +3,8 @@
 #include <string.h>
 #include "types.h"
 
+
+
 extern struct NODE* root;
 extern struct NODE* cwd;
 
