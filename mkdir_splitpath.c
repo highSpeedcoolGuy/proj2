@@ -3,6 +3,7 @@
 #include <string.h>
 #include "types.h"
 
+"HelloASddasdasdkjabsdjhasijdhauiosdhaiuhsdiuahsdiuasu"
 
 
 extern struct NODE* root;
@@ -18,6 +19,7 @@ struct NODE* findChild(struct NODE* parent, const char* name) {
         child = child->siblingPtr;
     }
     return NULL;
+    
 }
 
 // splitPath function to split path into dirName and baseName
